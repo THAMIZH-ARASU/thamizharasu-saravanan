@@ -15,17 +15,20 @@ const Experience: React.FC = () => {
               <h2>Experience</h2>
               <div className="project-grid">
                 <ProjectCard
-                  title="📊 Data Science Intern"
-                  date="June 2023 - August 2023"
-                  description="Worked on developing and implementing machine learning models for customer behavior analysis. Collaborated with cross-functional teams to deliver insights and recommendations."
-                  tech={["Python", "Scikit-learn", "Data Analysis"]}
+                  title="🤖 Research Project Intern"
+                  organization="JIPMER"
+                  date="Feb 2025 - Present"
+                  description="Working on 3D Segmentation of Liver, Tumor, Hepatic Arteries, Hepatic Veins and Portal Veins from Computed Tomography Scan Images using Segmentation ArchitecturesWorking"
+                  tech={["SegFormer", "UNET", "Vision Transformers", "CT Scans", "Slicer 3D"]}
                 />
                 <ProjectCard
-                  title="🤖 Research Assistant"
-                  date="January 2023 - May 2023"
-                  description="Assisted in AI research projects, focusing on natural language processing and computer vision applications. Contributed to paper writing and experimental design."
-                  tech={["Research", "NLP", "Computer Vision"]}
+                  title="📊 Intern"
+                  organization="Manatec Electronics Pvt. Ltd."
+                  date="May 2024 - June 2024"
+                  description="During this period, I have demonstrated a high level of proficiency and commitment to the project 'Parameter checking for Wheel Alignment'"
+                  tech={["Python-Tkinter", "Microsoft Databases", "Excel"]}
                 />
+                
               </div>
             </>
           } 

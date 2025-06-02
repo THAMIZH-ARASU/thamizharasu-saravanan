@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
         <div className="hero-profile" ref={profileRef}>
           <div className="hero-image-container">
             <img 
-              src="/src/assets/photo.PNG"
+              src="https://github.com/THAMIZH-ARASU/portfolio-design/blob/main/src/assets/photo.PNG?raw=true"
               alt="Thamizharasu Saravanan" 
               className="hero-image"
             />
@@ -35,15 +35,18 @@ const Hero: React.FC = () => {
           </h2>
         </div>
         <p className="hero-intro">
-          I'm a passionate Data Science graduate with expertise in Machine Learning and 
-          Artificial Intelligence. My journey in data science is driven by curiosity and 
-          a desire to solve complex problems using cutting-edge technologies.
+          Passionate about Full Stack Development and Machine Learning, 
+          I build scalable, intelligent software solutions.
+          With a strong grasp of Java and Python, and some front-end experience, 
+          I deliver end-to-end systems—from intuitive interfaces to ML-powered back ends.
         </p>
         <div className="tech-stack">
           <span className="tech-item">Python</span>
           <span className="tech-item">Machine Learning</span>
           <span className="tech-item">Deep Learning</span>
           <span className="tech-item">Data Analysis</span>
+          <span className="tech-item">Artificial Intelligence</span>
+          <span className="tech-item">Computer Vision</span>
         </div>
         <a href="#about" className="hero-cta">
           <span>Explore My Work</span>

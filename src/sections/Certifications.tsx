@@ -15,22 +15,22 @@ const Certifications: React.FC = () => {
               <h2>Certifications</h2>
               <div className="project-grid">
                 <ProjectCard
-                  title="🎓 Deep Learning Specialization"
-                  date="Coursera - 2023"
-                  description="Comprehensive deep learning certification covering neural networks, CNN, RNN, and transformer architectures."
-                  tech={["Deep Learning", "Neural Networks"]}
-                />
-                <ProjectCard
-                  title="📈 Data Science Professional"
-                  date="IBM - 2023"
-                  description="Professional certification in data science, covering data analysis, visualization, and machine learning."
+                  title="🎓 Data Science using Python"
+                  date="FITA - 2024"
+                  description="Comprehensive certification program focused on core and advanced concepts in Data Science using Python. Gained hands-on experience in Data Manipulation, Visualization, Model Training."
                   tech={["Data Science", "Machine Learning"]}
                 />
                 <ProjectCard
-                  title="🔍 AWS Machine Learning"
-                  date="Amazon - 2023"
-                  description="Specialized certification in cloud-based machine learning solutions and AWS ML services."
-                  tech={["AWS", "Cloud ML"]}
+                  title="📈 Diploma in Full Stack Java Developer"
+                  date="CSEC - 2024"
+                  description="Completed an in-depth training program covering both front-end and back-end development. Acquired hands-on experience in Spring Boot and ReactJS."
+                  tech={["Core JAVA", "Spring Boot", "React JS", "MySQL"]}
+                />
+                <ProjectCard
+                  title="🔍 Diploma in Computer Application"
+                  date="CSEC - 2019"
+                  description="Completed foundational training in computer applications, focusing on productivity tools and basic programming. Gained practical skills in C, C++ and Web Development."
+                  tech={["C", "C++", "Microsoft Office Suite"]}
                 />
               </div>
             </>

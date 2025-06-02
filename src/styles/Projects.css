@@ -39,18 +39,23 @@
 
 .project-image-container {
   margin: -1.5rem -1.5rem 1.5rem;
-  height: 180px;
+  height: 250px;
   overflow: hidden;
   position: relative;
   border-radius: 10px 10px 0 0;
   border-bottom: 2px dashed var(--border-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-tertiary);
 }
 
 .project-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.5s ease;
+  padding: 0.5rem;
 }
 
 .project-card:hover .project-image {
@@ -146,6 +151,7 @@
   overflow: hidden;
   border: 2px dashed white;
   font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif;
+  z-index: 1;
 }
 
 .project-link::before {
@@ -157,16 +163,18 @@
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transition: 0.5s;
-}
-
-.project-link:hover::before {
-  left: 100%;
+  z-index: -1;
 }
 
 .project-link:hover {
   transform: scale(1.05);
   background: var(--google-red);
   box-shadow: var(--shadow-md);
+  color: white;
+}
+
+.project-link:hover::before {
+  left: 100%;
 }
 
 .link-arrow {
@@ -210,4 +218,81 @@
     font-size: 0.9rem;
     padding: 0.5rem 1rem;
   }
+}
+
+.github-link-container {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.github-link-container h2 {
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.github-link-container p {
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px dashed var(--border-primary);
+}
+
+.github-link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  background: var(--bg-secondary);
+}
+
+.github-icon {
+  font-size: 1.2rem;
+}
+
+.project-organization {
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif;
+  color: var(--google-blue);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  position: relative;
+  display: block;
+  padding-left: 1.5rem;
+}
+
+.project-organization::before {
+  content: '🏢';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.project-organization::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 1.5rem;
+  width: calc(100% - 1.5rem);
+  height: 2px;
+  background: var(--google-blue);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-organization::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }

@@ -24,10 +24,12 @@
 
 .hero-content {
   max-width: 900px;
+  width: 100%;
   text-align: center;
   z-index: 2;
   padding: 2rem;
   position: relative;
+  margin: 0 auto;
 }
 
 .hero-profile {
@@ -124,10 +126,11 @@
   font-size: 1.25rem;
   line-height: 1.8;
   color: var(--text-primary);
-  margin: 1.5rem 0;
+  margin: 1.5rem auto;
   opacity: 0;
   animation: fadeInUp 0.8s ease 0.3s forwards;
   max-width: 700px;
+  width: 100%;
 }
 
 .tech-stack {
@@ -197,20 +200,20 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem;
   background: var(--google-blue);
   color: white;
   font-size: 1.1rem;
   font-weight: 600;
   border-radius: 30px;
+  text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  margin-top: 1rem;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease 0.8s forwards;
-  box-shadow: var(--shadow-md);
   border: 2px dashed white;
+  z-index: 1;
+  margin-top: 2rem;
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif;
 }
 
 .hero-cta::before {
@@ -222,16 +225,18 @@
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transition: 0.5s;
+  z-index: -1;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px) scale(1.05);
+  background: var(--google-red);
+  box-shadow: var(--shadow-md);
+  color: white;
 }
 
 .hero-cta:hover::before {
   left: 100%;
-}
-
-.hero-cta:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: var(--shadow-lg);
-  background: var(--google-red);
 }
 
 .cta-arrow {

@@ -8,6 +8,7 @@ interface ProjectCardProps {
   link?: string;
   image?: string;
   date?: string;
+  organization?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ 
@@ -16,7 +17,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   tech, 
   link, 
   image,
-  date
+  date,
+  organization
 }) => {
   return (
     <div className="project-card">
@@ -27,6 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       )}
       <div className="project-content">
         <h3 className="project-title">{title}</h3>
+        {organization && <p className="project-organization">{organization}</p>}
         {date && <p className="project-date">{date}</p>}
         <p className="project-description">{description}</p>
         <div className="project-tech">
