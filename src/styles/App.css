@@ -14,17 +14,13 @@
   --doodle-warning: #FF8000;
   --doodle-error: #D93025;
   
-  /* Background colors */
+  /* Light theme (default) */
   --bg-primary: #f8f9fa;
   --bg-secondary: #ffffff;
   --bg-tertiary: #f1f3f4;
-  
-  /* Text colors */
   --text-primary: #202124;
   --text-secondary: #5f6368;
   --text-tertiary: #80868b;
-  
-  /* Border colors */
   --border-primary: #dadce0;
   
   /* Shadows */
@@ -33,11 +29,28 @@
   --shadow-lg: 0 4px 8px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
 }
 
+/* Dark theme */
+[data-theme="dark"] {
+  --bg-primary: #202124;
+  --bg-secondary: #2d2e31;
+  --bg-tertiary: #3c4043;
+  --text-primary: #e8eaed;
+  --text-secondary: #9aa0a6;
+  --text-tertiary: #80868b;
+  --border-primary: #3c4043;
+  
+  /* Dark theme shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
 /* Base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 html {
@@ -145,4 +158,27 @@ section {
   section {
     padding: 2rem 0;
   }
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.theme-toggle svg {
+  width: 24px;
+  height: 24px;
 }

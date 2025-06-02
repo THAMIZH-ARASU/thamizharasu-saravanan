@@ -7,21 +7,23 @@ import Experience from './sections/Experience';
 import Certifications from './sections/Certifications';
 import Activities from './sections/Activities';
 import Contact from './sections/Contact';
+import { ThemeProvider } from './context/ThemeContext';
 import './styles/App.css';
 
 function App() {
   useEffect(() => {
     // Add smooth scrolling to all internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+      anchor.addEventListener('click', (e: Event) => {
         e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-        const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
-        const targetPosition = targetSection?.offsetTop - headerHeight;
+        const targetId = (e.currentTarget as HTMLAnchorElement).getAttribute('href');
+        const targetSection = document.querySelector(targetId || '');
+        const headerElement = document.querySelector('.header');
+        const headerHeight = headerElement?.getBoundingClientRect().height || 0;
+        const targetPosition = targetSection?.getBoundingClientRect().top || 0;
         
         window.scrollTo({
-          top: targetPosition,
+          top: targetPosition + window.scrollY - headerHeight,
           behavior: 'smooth'
         });
       });
@@ -31,11 +33,12 @@ function App() {
     const setActiveLink = () => {
       const sections = document.querySelectorAll('section[id]');
       const navLinks = document.querySelectorAll('.header-link');
-      const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+      const headerElement = document.querySelector('.header');
+      const headerHeight = headerElement?.getBoundingClientRect().height || 0;
       
       sections.forEach(section => {
-        const sectionTop = section.offsetTop - headerHeight - 50;
-        const sectionHeight = section.clientHeight;
+        const sectionTop = section.getBoundingClientRect().top + window.scrollY - headerHeight - 50;
+        const sectionHeight = section.getBoundingClientRect().height;
         
         if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
           const current = section.getAttribute('id');
@@ -58,18 +61,20 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Experience />
-        <Certifications />
-        <Activities />
-        <Contact />
-      </main>
-    </div>
+    <ThemeProvider>
+      <div className="app">
+        <Header />
+        <main>
+          <Hero />
+          <About />
+          <Projects />
+          <Experience />
+          <Certifications />
+          <Activities />
+          <Contact />
+        </main>
+      </div>
+    </ThemeProvider>
   );
 }
 

@@ -164,7 +164,31 @@
     margin-right: 0;
   }
   
+  .logo {
+    font-size: 1.2rem;
+  }
+  
   .logo-text {
-    display: none;
+    padding: 0.3rem;
+    font-size: 1.2rem;
+  }
+  
+  .theme-toggle {
+    margin-left: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .logo-text {
+    padding: 0.2rem;
+    font-size: 1rem;
+  }
+  
+  .nav-icon {
+    font-size: 1.3rem;
   }
 }

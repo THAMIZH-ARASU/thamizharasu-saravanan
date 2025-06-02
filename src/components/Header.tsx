@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ThemeToggle from './ThemeToggle';
 import '../styles/Header.css';
 
 const Header: React.FC = () => {
@@ -48,6 +49,7 @@ const Header: React.FC = () => {
           <span className="nav-icon">📧</span>
           <span className="nav-text">Contact</span>
         </a>
+        <ThemeToggle />
       </nav>
     </header>
   );
